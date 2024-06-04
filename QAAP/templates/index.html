@@ -1,0 +1,39 @@
+<!-- 文件描述：本网页是网站主页 -->
+{% extends "base.html" %}
+
+{% block other_link_value %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block title_value %}
+问答平台-首页
+{% endblock %}
+
+{% block container_value %}
+<div class="row" style="margin-top: 20px;">
+    <div class="col"></div>
+
+    <div class="col-10">
+        <ul class="question-ul">
+            {% for question in questions %}
+                <li>
+                    <div class="side-question">
+                        <img class="side-question-avatar" src="{{ url_for('static', filename='images/my.jpg') }}" alt="用户头像">
+                        <!-- TODO: 用户头像上传也可以尝试制作一下 -->
+                    </div>
+                    <div class="question-main">
+                        <div class="question-title"><a href="{{ url_for('qa.detail', qa_id=question.id) }}">{{ question.title }}</a></div>
+                        <div class="question-content">{{ question.content }}</div>
+                        <div class="question-detail">
+                            <span class="question-author">{{ question.author.username }}</span>
+                            <span class="question-time">{{ question.create_time }}</span>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="col"></div>
+</div>
+{% endblock %}
