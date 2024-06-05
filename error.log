@@ -1,0 +1,29 @@
+[2024-06-05 11:55:19 +0800] [18436] [INFO] Starting gunicorn 22.0.0
+[2024-06-05 11:55:19 +0800] [18436] [INFO] Listening at: http://0.0.0.0:8092 (18436)
+[2024-06-05 11:55:19 +0800] [18436] [INFO] Using worker: sync
+[2024-06-05 11:55:19 +0800] [18437] [INFO] Booting worker with pid: 18437
+[2024-06-05 11:55:19 +0800] [18438] [INFO] Booting worker with pid: 18438
+[2024-06-05 11:55:19 +0800] [18439] [INFO] Booting worker with pid: 18439
+[2024-06-05 11:55:19 +0800] [18442] [INFO] Booting worker with pid: 18442
+[2024-06-05 11:55:28 +0800] [18436] [INFO] Handling signal: int
+[2024-06-05 11:55:28 +0800] [18439] [INFO] Worker exiting (pid: 18439)
+[2024-06-05 11:55:28 +0800] [18438] [INFO] Worker exiting (pid: 18438)
+[2024-06-05 11:55:28 +0800] [18442] [INFO] Worker exiting (pid: 18442)
+[2024-06-05 11:55:28 +0800] [18437] [INFO] Worker exiting (pid: 18437)
+[2024-06-05 11:55:29 +0800] [18436] [INFO] Shutting down: Master
+[2024-06-05 11:55:42 +0800] [18700] [INFO] Starting gunicorn 22.0.0
+[2024-06-05 11:55:42 +0800] [18700] [INFO] Listening at: http://0.0.0.0:8092 (18700)
+[2024-06-05 11:55:42 +0800] [18700] [INFO] Using worker: sync
+[2024-06-05 11:55:42 +0800] [18701] [INFO] Booting worker with pid: 18701
+[2024-06-05 11:55:42 +0800] [18702] [INFO] Booting worker with pid: 18702
+[2024-06-05 11:55:42 +0800] [18703] [INFO] Booting worker with pid: 18703
+[2024-06-05 11:55:42 +0800] [18704] [INFO] Booting worker with pid: 18704
+[2024-06-05 11:57:14 +0800] [18702] [INFO] Worker exiting (pid: 18702)
+[2024-06-05 11:57:14 +0800] [18700] [INFO] Handling signal: term
+[2024-06-05 11:57:14 +0800] [18701] [INFO] Worker exiting (pid: 18701)
+[2024-06-05 11:57:14 +0800] [18703] [INFO] Worker exiting (pid: 18703)
+[2024-06-05 11:57:14 +0800] [18704] [INFO] Worker exiting (pid: 18704)
+[2024-06-05 11:57:14 +0800] [18700] [ERROR] Worker (pid:18702) was sent SIGTERM!
+[2024-06-05 11:57:14 +0800] [18700] [ERROR] Worker (pid:18703) was sent SIGTERM!
+[2024-06-05 11:57:14 +0800] [18700] [ERROR] Worker (pid:18704) was sent SIGTERM!
+[2024-06-05 11:57:14 +0800] [18700] [INFO] Shutting down: Master
