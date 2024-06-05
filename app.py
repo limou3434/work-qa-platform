@@ -3,7 +3,7 @@
 """
 
 # flask 相关导入
-from flask import Flask, render_template, session, g
+from flask import Flask, render_template, session, g, redirect
 import config
 # exts 插件导入
 from exts import db, mail, migrate
@@ -22,6 +22,12 @@ app.config.from_object(config)
 db.init_app(app)
 migrate.init_app(app, db)
 mail.init_app(app)
+
+# 绑定主页
+@app.route('/')
+def index():
+    return redirect('/qa/index')
+
 
 # 绑定蓝图中的视图函数
 app.register_blueprint(qa_bp)
@@ -49,4 +55,4 @@ def my_context_processor():
 
 # 启动 Web 后端服务
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port='8092')

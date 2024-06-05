@@ -32,7 +32,7 @@ class QuestionModel(db.Model):
 
     # 关联数据表, 反向引用名称为 questions, 若有名为 a_user
     # 的 UserModel 对象则可以通过 a_user.questions 来获取该用户发布的所有问题
-    author = db.relationship(UserModel, backref='questions')
+    author = db.relationship(UserModel, backref='questions') # UserModel::对象.questions = all question
 
 # 评论内容数据表
 class AnswerModel(db.Model):
@@ -40,8 +40,8 @@ class AnswerModel(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     content = db.Column(db.Text, nullable=False)
     create_time = db.Column(db.DateTime, default=datetime.now)
-    question_id = db.Column(db.Integer, db.ForeignKey('question.id'), nullable=False) # 外键: 对应的提问 id
+    question_id = db.Column(db.Integer, db.ForeignKey('question.id')) # 外键: 对应的提问 id
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False) # 外键: 对应的评论用户 id
     
-    question = db.relationship(QuestionModel, backref=db.backref('answers', order_by=create_time.desc())) 
-    author = db.relationship(UserModel, backref='answers')
+    question = db.relationship(QuestionModel, backref=db.backref('answers', order_by=create_time.desc())) # 这里做了排序, 时间晚的放前面
+    author = db.relationship(UserModel, backref=db.backref('answers', order_by=create_time.desc())) # 保留, 可以后续拓展

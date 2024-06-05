@@ -41,7 +41,10 @@ def public_question():
 def detail(qa_id):
     a_question = QuestionModel.query.get(qa_id)
     a_user = UserModel.query.filter_by(id=a_question.author_id).first()
-    return render_template('detail.html', question=a_question, user=a_user)
+    # return render_template('detail.html', question=a_question, user=a_user)
+    # 查询帖子的评论数据
+    comments = AnswerModel.query.filter_by(question_id=qa_id).all()
+    return render_template('detail.html', question=a_question, user=a_user, comments=comments)
 
 # 发布评论接口
 @bp.route('/public_answer', methods=['POST'])
@@ -58,3 +61,11 @@ def public_answer():
     else:
         print(form.errors)
         return redirect(url_for('qa.detail', qa_id=request.form.get('question_id')))
+
+# 搜索引擎
+@bp.route('/search')
+@login_required # TODO: 防止未登录的数据爬取
+def search():
+    q = request.args.get('q')
+    questions = QuestionModel.query.filter(QuestionModel.title.contains(q)).all()
+    return render_template('index.html', questions=questions)

@@ -2,7 +2,7 @@
 用户授权逻辑相关蓝图
 """
 
-from flask import Blueprint, render_template, request, jsonify, redirect, url_for, session
+from flask import Blueprint, render_template, request, jsonify, redirect, session
 from exts import mail, db
 from flask_mail import Message 
 import string

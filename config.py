@@ -6,11 +6,17 @@ import os
 
 
 # 数据库配置
+""" 创建数据库的脚本
+create database qa_platform
+character set utf8mb4
+collate utf8mb4_unicode_ci;
+"""
+
 USERNAME                = 'ljp'
 PASSWORD                = os.getenv('DATABASE_PASSWORD')
 SERVER_IP               = '127.0.0.1'
 SERVER_PORT             = '3306'
-DATABASE_NAME           = 'qa-platform'
+DATABASE_NAME           = 'qa_platform'
 DB_URI                  = 'mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8mb4'.format(USERNAME, PASSWORD, SERVER_IP, SERVER_PORT, DATABASE_NAME)
 SQLALCHEMY_DATABASE_URI = DB_URI
 
