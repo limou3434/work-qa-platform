@@ -12,8 +12,8 @@ character set utf8mb4
 collate utf8mb4_unicode_ci;
 """
 
-USERNAME                = 'ljp'
-PASSWORD                = os.getenv('DATABASE_PASSWORD')
+USERNAME                = 'root'
+PASSWORD                = 'Qwe54188_'
 SERVER_IP               = '127.0.0.1'
 SERVER_PORT             = '3306'
 DATABASE_NAME           = 'qa_platform'
@@ -25,9 +25,9 @@ SQLALCHEMY_DATABASE_URI = DB_URI
 MAIL_SERVER = 'smtp.qq.com'                             # SMTP 服务器地址(这里配置的是 qq 的)
 MAIL_USE_SSL = True                                     # 使用 SSL 加密
 MAIL_PORT = 465                                         # qq 邮箱服务器公开的端口号
-MAIL_USERNAME = os.getenv('MAIL_NAME')                  # 邮箱账户
-MAIL_PASSWORD = os.getenv('SMTP_CODE')                  # 授权密码
-MAIL_DEFAULT_SENDER = ('limou', os.getenv('MAIL_NAME')) # 默认发送者
+MAIL_USERNAME = '898738804@qq.com'                  # 邮箱账户
+MAIL_PASSWORD =  'vkbeetczccqtbfjb'                 # 授权密码
+MAIL_DEFAULT_SENDER = MAIL_USERNAME # 默认发送者
 
 
 # 会话配置

@@ -34,10 +34,13 @@ mysql >: exit
 
 # 使用脚本生成需要的数据表
 flask db init # 就会生成相关的 migrations 配置文件夹, 这一步只需要执行一次
-flask db migrat # 识别 ORM 模型改动, 生成迁移脚本, migrations 文件夹内开始有内容, 这一命令可以重复执行
+flask db migrate # 识别 ORM 模型改动, 生成迁移脚本, migrations 文件夹内开始有内容, 这一命令可以重复执行
 flask db upgrade # 运行迁移脚本, 同步到数据库中, 此时数据库就会出现新的表
 
-# 部署项目
+# 开发环境
+python app.py
+
+# 生产环境
 pip install gunicorn
 gunicorn -w 4 -b 0.0.0.0:<your_port> app:app --daemon
 
