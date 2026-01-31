@@ -55,7 +55,7 @@ def my_context_processor():
 
 # 启动 Web 后端服务
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port='8092')
+    app.run(debug=True, host='0.0.0.0', port='8000')
 
 # TODO: 考虑 WebSocket 消息通知
 # TODO: 考虑前后端分离
